@@ -13,12 +13,14 @@ import {
   Check,
   Copy,
   Sparkles,
+  Phone,
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const [currentTime, setCurrentTime] = useState('');
-  const emailAddress = 'kev.darshan.dev@gmail.com';
+  const emailAddress = 'kaivalya9775@gmail.com';
+  const phoneNumber = '+91 88492 41502';
 
   // Live Rajkot, Gujarat, India (IST) clock
   useEffect(() => {
@@ -123,7 +125,7 @@ export const Footer: React.FC = () => {
 
         {/* Dynamic Live Clock & College Status Bar */}
         <FadeIn delay={0.35} y={20} className="w-full mt-14 sm:mt-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
             {/* Live Rajkot Clock */}
             <div className="p-4 rounded-2xl bg-[#141414]/70 border border-[#D7E2EA]/10 flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -163,6 +165,29 @@ export const Footer: React.FC = () => {
                 Gujarat
               </span>
             </div>
+
+            {/* Phone Number */}
+            <a
+              href={`tel:${phoneNumber.replace(/\s/g, '')}`}
+              className="p-4 rounded-2xl bg-[#141414]/70 border border-[#D7E2EA]/10 flex items-center justify-between hover:border-emerald-500/40 hover:bg-emerald-500/5 transition-all group"
+            >
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#D7E2EA]/50 block">
+                    Phone
+                  </span>
+                  <span className="text-sm font-bold text-white tracking-wide font-mono">
+                    {phoneNumber}
+                  </span>
+                </div>
+              </div>
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-semibold uppercase">
+                Call
+              </span>
+            </a>
           </div>
         </FadeIn>
 
